@@ -1,4 +1,4 @@
-from .default_icons import *
+from .default_gest import *
 
 
 class ModelConfig(Hierarchical):
