@@ -133,6 +133,8 @@ def train(cfg: _Config, model_name, experiment_name="", log_dir="./logs", debug=
 
             if not debug and step % cfg.ckpt_every == 0 and step > 0:
                 utils.save_ckpt_list(checkpoint_dir, model, cfg, optimizers, scheduler_lrs, scheduler_warmups, stats, train_vars)
+        print("YO, completed an epoch!!!")
+    print("YO, this model's done training!!!")
 
 
 if __name__ == "__main__":
@@ -148,3 +150,5 @@ if __name__ == "__main__":
     model_name, experiment_name = args.config_module.split(".")[-2:]
 
     train(cfg, model_name, experiment_name, log_dir=args.log_dir, debug=args.debug, resume=args.resume)
+    
+    print("Ok, this stupid script is done, time to go!!!")
