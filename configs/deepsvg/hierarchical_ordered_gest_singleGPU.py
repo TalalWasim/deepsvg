@@ -27,5 +27,3 @@ class Config(Config):
         self.collate_fn = None
         self.data_dir = "./dataset/data_quant_0.95/"
         self.meta_filepath = "./dataset/svg_meta_quant_0.95.csv"
-        
-        self.num_epochs = 2
