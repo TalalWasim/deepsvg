@@ -1,4 +1,6 @@
 results/
+dataset/data_bast
+dataset/data_kmeans
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
