@@ -19,9 +19,9 @@ class Config(Config):
         self.filter_category = None
 
         self.learning_rate = 1e-3 * num_gpus
-        self.batch_size = 120 * num_gpus
+        self.batch_size = 128 * num_gpus
 
-        self.val_every = 200
+        self.val_every = 500
         
         self.dataloader_module = "deepsvg.svg_dataset"
         self.collate_fn = None

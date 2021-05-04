@@ -19,11 +19,13 @@ class Config(Config):
         self.filter_category = None
 
         self.learning_rate = 1e-3 * num_gpus
-        self.batch_size = 120 * num_gpus
+        self.batch_size = 256 * num_gpus
 
-        self.val_every = 200
+        self.val_every = 500
         
         self.dataloader_module = "deepsvg.svg_dataset"
         self.collate_fn = None
         self.data_dir = "./dataset/data_quant_0.95/"
         self.meta_filepath = "./dataset/svg_meta_quant_0.95.csv"
+        
+        self.num_epochs = 2
