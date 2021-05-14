@@ -30,10 +30,10 @@ class _Config:
         # Dataset
         self.train_ratio = 1.0                                #
         self.nb_augmentations = 1                             #
-
-        self.max_num_groups = 4                               #
-        self.max_seq_len = 27                                 #
-        self.max_total_len = None                             #
+        
+        self.max_num_groups = 8                               #
+        self.max_seq_len = 62                                 #
+        self.max_total_len = 78                               #
 
         self.filter_uni = None                                #
         self.filter_category = None                           #
