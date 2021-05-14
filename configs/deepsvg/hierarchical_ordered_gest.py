@@ -7,10 +7,13 @@ class ModelConfig(Hierarchical):
 
         self.label_condition = False
         self.use_vae = False
+        self.max_num_groups = 8
+        self.max_total_len = 78
+        self.max_seq_len = 62
 
 
 class Config(Config):
-    def __init__(self, num_gpus=2):
+    def __init__(self, num_gpus=1):
         super().__init__(num_gpus=num_gpus)
 
         self.model_cfg = ModelConfig()
@@ -25,5 +28,11 @@ class Config(Config):
         
         self.dataloader_module = "deepsvg.svg_dataset"
         self.collate_fn = None
-        self.data_dir = "./dataset/data_quant_0.95/"
-        self.meta_filepath = "./dataset/svg_meta_quant_0.95.csv"
+        self.data_dir = "./dataset/data_fake/data/"
+        self.meta_filepath = "./dataset/data_fake/svg_meta.csv"
+#         self.data_dir = "./dataset/data_bast/data_quant_0.85/"
+#         self.meta_filepath = "./dataset/data_bast/svg_meta_quant_0.85.csv"
+        
+        self.max_num_groups = 8
+        self.max_total_len = 78
+        self.max_seq_len = 62

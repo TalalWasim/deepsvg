@@ -37,8 +37,9 @@ class Config(_Config):
 
         self.train_ratio = 1.0
 
-        self.max_num_groups = 4
-        self.max_total_len = 27
+        self.max_num_groups = 8
+        self.max_total_len = 78
+        self.max_seq_len = 62
 
         # Dataloader
         self.loader_num_workers = 4 * num_gpus
@@ -64,7 +65,7 @@ class Config(_Config):
 
     def get_weights(self, step, epoch):
         return {
-            "kl_tolerance": 0.1,
+            "kl_tolerance": 0.0,
             "loss_kl_weight": linear(0, 10, step, 0, 10000),
             "loss_hierarch_weight": 1.0,
             "loss_cmd_weight": 1.0,
