@@ -1,4 +1,4 @@
-from .default_gest import *
+from .defaults_gest import *
 
 
 class ModelConfig(Hierarchical):
@@ -22,7 +22,7 @@ class Config(Config):
         self.filter_category = None
 
         self.learning_rate = 1e-3 * num_gpus
-        self.batch_size = 128 * num_gpus
+        self.batch_size = 64 * num_gpus
 
         self.val_every = 500
         

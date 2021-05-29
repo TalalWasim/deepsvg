@@ -37,10 +37,6 @@ class Config(_Config):
 
         self.train_ratio = 1.0
 
-        self.max_num_groups = 8
-        self.max_total_len = 78
-        self.max_seq_len = 62
-
         # Dataloader
         self.loader_num_workers = 4 * num_gpus
 
