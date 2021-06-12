@@ -11,6 +11,7 @@ from typing import List, Union
 import pandas as pd
 import os
 import pickle
+import numpy as np
 Num = Union[int, float]
 
 
@@ -155,11 +156,17 @@ class SVGDataset(torch.utils.data.Dataset):
             return svg.numericalize(256)
         return svg
 
-    def get(self, idx=0, model_args=None, random_aug=True, id=None, svg: SVG=None):
+    def get(self, idx=None, model_args=None, random_aug=True, id=None, svg: SVG=None):
+        
         if id is None:
             idx = idx % len(self.df)
             id = self.idx_to_id(idx)
-
+        
+        # new
+        elif idx is None:
+            idx = np.where((self.df['id'] == id).to_numpy())[0][0]
+        # new
+        
         if svg is None:
             svg = self._load_svg(id)
 

@@ -31,9 +31,9 @@ class _Config:
         self.train_ratio = 1.0                                #
         self.nb_augmentations = 1                             #
         
-        self.max_num_groups = 8                               #
-        self.max_seq_len = 62                                 #
-        self.max_total_len = 78                               #
+        self.max_num_groups = 15                              #
+        self.max_seq_len = 30                                 #
+        self.max_total_len = None                             #
 
         self.filter_uni = None                                #
         self.filter_category = None                           #

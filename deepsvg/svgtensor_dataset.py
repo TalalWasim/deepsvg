@@ -11,6 +11,7 @@ from typing import List, Union
 import pandas as pd
 import os
 import pickle
+import numpy as np
 Num = Union[int, float]
 
 
