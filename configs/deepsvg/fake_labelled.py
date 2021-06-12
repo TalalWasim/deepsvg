@@ -1,12 +1,12 @@
 from .defaults_gest import *
 
-max_num_groups = 6
-max_seq_len = 77
-max_total_len = 82
+# max_num_groups = 6
+# max_seq_len = 77
+# max_total_len = 82
 
-# max_num_groups = 8
-# max_seq_len = 34
-# max_total_len = 48
+max_num_groups = 8
+max_seq_len = 34
+max_total_len = 48
 
 class ModelConfig(Hierarchical):
     def __init__(self):
@@ -19,7 +19,7 @@ class ModelConfig(Hierarchical):
         self.max_seq_len = max_seq_len
         self.max_total_len = max_total_len
         
-        self.dim_z = 64
+        self.dim_z = 128
 
 
 class Config(Config):
@@ -41,8 +41,8 @@ class Config(Config):
         self.val_every = 500
         
         self.dataloader_module = "deepsvg.svg_dataset"
-        self.data_dir = "./dataset/data_fake_serifs/data/"
-        self.meta_filepath = "./dataset/data_fake_serifs/svg_meta_labelled_2.csv"
+        self.data_dir = "./dataset/data_fake/data/"
+        self.meta_filepath = "./dataset/data_fake/svg_meta_labelled_2.csv"
 #         self.data_dir = "./dataset/data_bast/data_quant_0.85/"
 #         self.meta_filepath = "./dataset/data_bast/svg_meta_quant_0.85.csv"
         

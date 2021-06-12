@@ -19,7 +19,7 @@ class ModelConfig(Hierarchical):
         self.max_seq_len = max_seq_len
         self.max_total_len = max_total_len
         
-        self.dim_z = 64
+        self.dim_z = 128
 
 
 class Config(Config):

@@ -37,17 +37,19 @@ class Config(_Config):
 
         self.train_ratio = 1.0
 
+        self.max_num_groups = 8
+        self.max_total_len = 50
+
         # Dataloader
         self.loader_num_workers = 4 * num_gpus
 
         # Training
         self.num_epochs = 50
         self.val_every = 1000
-        self.warmup_steps = 1000 #500
 
         # Optimization
         self.learning_rate = 1e-3 * num_gpus
-        self.batch_size = 64 * num_gpus
+        self.batch_size = 60 * num_gpus
         self.grad_clip = 1.0
 
     def make_schedulers(self, optimizers, epoch_size):
@@ -62,7 +64,7 @@ class Config(_Config):
 
     def get_weights(self, step, epoch):
         return {
-            "kl_tolerance": 0.0,
+            "kl_tolerance": 0.1,
             "loss_kl_weight": linear(0, 10, step, 0, 10000),
             "loss_hierarch_weight": 1.0,
             "loss_cmd_weight": 1.0,
@@ -84,8 +86,7 @@ class Config(_Config):
             tensor_pred = SVGTensor.from_cmd_args(commands_y[0].cpu(), args_y[0].cpu())
 
             try:
-                svg_path_sample = SVG.from_tensor(tensor_pred.data, viewbox=Bbox(256),
-                                                  allow_empty=True).normalize().split_paths().set_color("random")
+                svg_path_sample = SVG.from_tensor(tensor_pred.data, viewbox=Bbox(256), allow_empty=True).normalize().split_paths().set_color("random")
             except:
                 continue
 
