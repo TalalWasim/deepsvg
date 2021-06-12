@@ -1,5 +1,8 @@
 results/
 dataset/
+pretrained/
+encoded_data/
+encoded_TSNE/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
